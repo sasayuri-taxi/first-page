@@ -76,23 +76,54 @@
             transform: scale(1.2);
         }
         
-        /* アコーディオンのアイコン回転アニメーション */
-        .accordion-button .icon {
-            transition: transform 0.3s ease;
+        /* アコーディオンのスタイル */
+        .accordion-toggle-inner {
+            width: 100%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f7fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-        .accordion-button[aria-expanded="true"] .icon {
+        .accordion-toggle-inner:hover {
+            background-color: #edf2f7;
+        }
+        .accordion-toggle-inner h3, .accordion-toggle-inner h4, .accordion-toggle-inner h5 {
+            margin: 0 !important; padding: 0 !important; font-size: 1.1rem !important;
+        }
+        .accordion-toggle-inner h3::before, .accordion-toggle-inner h4::before { display: none !important; }
+        .accordion-toggle-inner .icon {
+            transition: transform 0.3s ease;
+            font-size: 1.25rem;
+            color: var(--primary-color);
+        }
+        .accordion-toggle-inner.active .icon {
             transform: rotate(180deg);
         }
-        .accordion-content {
-            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+        .accordion-content-inner {
             max-height: 0;
             overflow: hidden;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            padding-left: 1rem;
+            border-left: 2px solid var(--accent-color);
+            margin-left: 0.5rem;
+            margin-top: 1rem;
         }
+
 
         /* ヒーローセクションの背景グラデーション */
         .hero-gradient {
             background: linear-gradient(135deg, rgba(0, 90, 79, 0.85), rgba(26, 125, 113, 0.7)), url('https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?q=80&w=2070&auto=format&fit=crop') no-repeat center center;
             background-size: cover;
+        }
+
+        /* ★修正点：テキストシャドウを少し強く調整 */
+        .text-shadow-heavy {
+            text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.75);
         }
     </style>
 </head>
@@ -101,16 +132,19 @@
     <!-- ヘッダー：スクロールしても追従し、背景が透けるデザイン -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="font-bold text-white text-xl font-poppins">
-                <a href="#hero">高度専門研修</a>
+            <div>
+                <h1 class="font-bold text-white text-xl font-poppins text-shadow-heavy">
+                    <a href="#hero">高度専門研修</a>
+                </h1>
+                <p class="text-xs text-white/90 text-shadow-heavy">介護サービスセンターささゆり監修</p>
             </div>
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="#introduction" class="text-white hover:text-var-accent-color transition-colors duration-300">理念</a>
-                <a href="#roadmap" class="text-white hover:text-var-accent-color transition-colors duration-300">研修内容</a>
-                <a href="#conclusion" class="text-white hover:text-var-accent-color transition-colors duration-300">結論</a>
+                <a href="#introduction" class="text-white hover:text-amber-300 transition-colors duration-300 text-shadow-heavy">理念</a>
+                <a href="#roadmap" class="text-white hover:text-amber-300 transition-colors duration-300 text-shadow-heavy">研修内容</a>
+                <a href="#conclusion-section" class="text-white hover:text-amber-300 transition-colors duration-300 text-shadow-heavy">結論</a>
             </nav>
             <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                <button id="mobile-menu-button" class="text-white focus:outline-none text-shadow-heavy">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -120,15 +154,15 @@
     <div id="mobile-menu" class="hidden fixed inset-0 bg-var-primary-color bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-8">
         <a href="#introduction" class="mobile-nav-link text-white text-2xl font-poppins">理念</a>
         <a href="#roadmap" class="mobile-nav-link text-white text-2xl font-poppins">研修内容</a>
-        <a href="#conclusion" class="mobile-nav-link text-white text-2xl font-poppins">結論</a>
+        <a href="#conclusion-section" class="mobile-nav-link text-white text-2xl font-poppins">結論</a>
     </div>
 
     <main>
         <!-- ヒーローセクション：最初の画面 -->
         <section id="hero" class="h-screen flex items-center justify-center text-white hero-gradient">
             <div class="text-center px-4">
-                <h1 class="text-4xl md:text-6xl font-bold font-poppins leading-tight mb-4 reveal">有能な支援者から、<br>卓越した専門家へ</h1>
-                <p class="text-lg md:text-xl max-w-3xl mx-auto reveal" style="transition-delay: 200ms;">実践能力から専門的指導力への飛躍を目指す、12ヶ月間の高度専門研修プログラム</p>
+                <h1 class="text-4xl md:text-6xl font-bold font-poppins leading-tight mb-4 reveal text-shadow-heavy">有能な支援者から、<br>卓越した専門家へ</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto reveal text-shadow-heavy" style="transition-delay: 200ms;">実践能力から専門的指導力への飛躍を目指す、12ヶ月間の高度専門研修プログラム</p>
                 <a href="#introduction" class="mt-8 inline-block bg-var-accent-color text-var-primary-color font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105 reveal" style="transition-delay: 400ms;">
                     プログラム詳細へ <i class="fas fa-arrow-down ml-2"></i>
                 </a>
@@ -187,11 +221,11 @@
                     <p class="text-var-text-light mt-4 max-w-2xl mx-auto reveal">各セッションをクリックして詳細を確認できます。</p>
                 </div>
                 
-                <div class="flex flex-col md:flex-row gap-8">
+                <div class="flex flex-col md:flex-row gap-8 lg:gap-16">
                     <!-- 左側：タイムラインナビゲーション -->
                     <div class="md:w-1/3">
-                        <div class="sticky top-24">
-                            <div class="relative border-l-2 border-var-border-color pl-8 space-y-8">
+                        <div class="sticky top-28">
+                            <div id="timeline-nav" class="relative border-l-2 border-var-border-color pl-8 space-y-8">
                                 <!-- JavaScriptで動的にセッションを生成 -->
                             </div>
                         </div>
@@ -206,7 +240,7 @@
         </section>
 
         <!-- 結論セクション -->
-        <section id="conclusion" class="py-20 md:py-32 bg-var-bg-light">
+        <section id="conclusion-section" class="py-20 md:py-32 bg-var-bg-light">
             <div class="container mx-auto px-6 text-center">
                  <h2 class="text-3xl md:text-4xl font-bold text-var-primary-color font-poppins reveal">未来を担う専門家として</h2>
                  <div class="max-w-3xl mx-auto mt-8 bg-var-bg-white p-8 rounded-lg shadow-lg reveal">
@@ -221,37 +255,127 @@
     <!-- フッター -->
     <footer class="bg-var-primary-color text-white">
         <div class="container mx-auto py-8 px-6 text-center">
-            <p>&copy; 2025 介護サービスセンターささゆり監修 高度専門研修プログラム. All Rights Reserved.</p>
+            <p class="text-shadow-heavy">&copy; 2025 介護サービスセンターささゆり監修 高度専門研修プログラム. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- 元のHTMLコンテンツを非表示で埋め込むためのコンテナ -->
+    <div id="original-content-source" style="display: none;">
+        <section id="session-1">
+            <h2 class="text-2xl font-bold">第1回：高度実践を支える専門的・法的枠組み</h2>
+            <p class="mb-4"><strong>目的：</strong> サービス提供のルールを単に知っているレベルから、障害者権利に関する法規を深く実践的に適用し、高度な職業倫理を体現するレベルへと移行する。</p>
+            <h3 class="highlight-h3 flex items-center mt-6"><i class="fas fa-gavel mr-3 text-var-accent-color"></i>障害者差別解消法の徹底理解</h3>
+            <p>同行援護の専門家は、単にサービスを提供するだけでなく、利用者の市民的権利を擁護する最前線に立つ存在です。そのためには、法律の深い理解が不可欠となります。本セッションでは、障害者差別解消法における「不当な差別的取扱い」と「合理的配慮の提供」という2つの核心的概念を、具体的な事例を通じて徹底的に分析します。「不当な差別的取扱い」の具体例として、「障害を理由に窓口対応を拒否する」「必要がないにもかかわらず介助者の同行を強制する」「本人を無視して介助者にのみ話しかける」といったケースを検討します。さらに、過去の判例、例えば「視覚障害を理由に修学旅行への参加を拒否され、介助者の同行を求められた」事案が不当な差別に当たると判断されたケースなどを学ぶことで、法律が実社会でどのように解釈・適用されるかを理解します。</p>
+            <div class="mt-8">
+                <button class="accordion-toggle-inner w-full">
+                    <h4 class="flex-grow">ケーススタディ：合理的配慮を交渉する技術</h4>
+                    <i class="fas fa-chevron-down icon"></i>
+                </button>
+                <div class="accordion-content-inner">
+                    <p class="mt-4">「合理的配慮」は、多くの場合、自動的に提供されるものではなく、利用者側からの意思表明と、事業者との間の建設的な対話、すなわち「交渉」を通じて実現されます。高度な専門家には、この交渉を円滑に進めるためのコミュニケーション能力と問題解決能力が求められます。本セッションでは、多様な場面における交渉術をケーススタディ形式で議論します。</p>
+                </div>
+            </div>
+            <div class="mt-8">
+                 <button class="accordion-toggle-inner w-full">
+                    <h4 class="flex-grow">高度な職業倫理の構築</h4>
+                    <i class="fas fa-chevron-down icon"></i>
+                </button>
+                <div class="accordion-content-inner">
+                    <p class="mt-4">標準的なカリキュラムでは基本的な職業倫理が扱われますが、本プログラムでは、現場で遭遇する複雑な「グレーゾーン」の倫理的ジレンマに焦点を当てます。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="session-2">
+            <h2 class="text-2xl font-bold">第2回：高度な病態生理学とロービジョンケアの原則</h2>
+            <p class="mb-4"><strong>目的：</strong> 医学的な診断名と、利用者の機能的な見え方、そして支援者が実践できる具体的なサポート戦略との間に、強固な橋を架ける。これにより、画一的ではない、個々の利用者に最適化された支援の提供を可能にする。</p>
+            <h3 class="highlight-h3 flex items-center mt-6"><i class="fas fa-diagnoses mr-3 text-var-accent-color"></i>診断から機能へ：疾患別の見え方と支援戦略</h3>
+            <p>同行援護の専門家は、単に「視覚障害者」を支援するのではありません。「特定の疾患に起因する、特有の見え方を持つ個人」を支援します。この違いを理解することが、高度な実践の第一歩です。本セッションでは、主要な疾患がもたらす機能的な影響を深く掘り下げます。</p>
+        </section>
+        
+        <section id="session-3">
+            <h2 class="text-2xl font-bold">第3回：情報提供の技術：高度な言語景観描写</h2>
+             <p class="mb-4"><strong>目的：</strong> 言語による情報提供のスキルを、単なる事実の伝達から、「言葉による風景画」を描く芸術の域へと高める。これにより、利用者が豊かで、有用かつ正確な心的イメージ（メンタルマップ）を構築できるよう支援する。</p>
+            <h3 class="highlight-h3 flex items-center mt-6"><i class="fas fa-palette mr-3 text-var-accent-color"></i>美術館の実践から学ぶ描写の基礎</h3>
+            <p>我々は、美術館の学芸員や解説者が美術作品を言語化するために洗練させてきた高度な技術を、日常の景観描写に応用します。</p>
+        </section>
+
+        <section id="session-4">
+            <h2 class="text-2xl font-bold">第4回：複雑・予測不能な環境の航法術</h2>
+            <p class="mb-4"><strong>目的：</strong> 基本的な誘導技術では対応困難な、非定型的で挑戦的な環境において、安全かつ効率的に利用者を支援するための高度な認知ツールと戦略的思考を習得する。</p>
+            <h3 class="highlight-h3 flex items-center mt-6"><i class="fas fa-map-signs mr-3 text-var-accent-color"></i>環境の分析と予測</h3>
+            <p>高度なナビゲーションは、まず環境を正確に分析することから始まります。</p>
+        </section>
+
+        <section id="session-5">
+            <h2 class="text-2xl font-bold">第5回：ケーススタディ・ワークショップ：失敗と複雑性からの学び</h2>
+            <p class="mb-4"><strong>目的：</strong> 実際の困難事例や失敗談を体系的に分析することを通じて、専門職としての省察の文化を育み、非難から学びへと転換することで、継続的な質の向上を図る。</p>
+        </section>
+
+        <section id="session-6">
+            <h2 class="text-2xl font-bold">第6回：複雑な生活行為の支援</h2>
+            <p class="mb-4"><strong>目的：</strong> 単なる移動を超え、高度な専門性が求められる生活行為において、利用者を効果的に支援するための専門知識と技術を提供する。</p>
+        </section>
+
+        <section id="session-7">
+            <h2 class="text-2xl font-bold">第7回：盲ろう（Deafblind）者支援入門</h2>
+            <p class="mb-4"><strong>目的：</strong> 高度な実践者に対し、盲ろうコミュニティの特有なニーズに関する基礎的な認識を提供し、基本的なコミュニケーション方法を習得させるとともに、専門的な「盲ろう者向け通訳・介助員」への紹介がいつ必要になるかを理解させる。</p>
+        </section>
+
+        <section id="session-8">
+            <h2 class="text-2xl font-bold">第8回：プロアクティブ・リスクマネジメントと体系的事故防止</h2>
+            <p class="mb-4"><strong>目的：</strong>支援者の思考様式を、事故に事後対応する「リアクティブ」なものから、リスクを体系的かつ根拠に基づいて特定、分析、軽減する「プロアクティブ」なものへと転換させる。</p>
+        </section>
+
+        <section id="session-9">
+            <h2 class="text-2xl font-bold">第9回：文化的・余暇的参加の促進：統合的ケーススタディ</h2>
+            <p class="mb-4"><strong>目的：</strong>参加者がこれまでに学んだ複数の高度なスキル（言語景観描写、複雑な環境の航法、利用者中心のファシリテーション、リスク評価）を、管理的かつ現実的な文脈で統合的に検討するための、集大成となるケーススタディモジュールとして機能させる。</p>
+        </section>
+
+         <section id="session-10">
+            <h2 class="text-2xl font-bold">第10回：災害への備えと緊急時対応</h2>
+            <p class="mb-4"><strong>目的：</strong>政府の公式ガイドラインに基づき、大規模災害の全てのフェーズにおいて、視覚障害のある利用者を効果的に支援するために不可欠な知識と意思決定スキルを、支援者に習得させる。</p>
+        </section>
+
+        <section id="session-11">
+            <h2 class="text-2xl font-bold">第11回：支援の未来：支援技術（アシスティブ・テクノロジー）の統合</h2>
+            <p class="mb-4"><strong>目的：</strong> 支援者が、現在および将来登場する支援技術に関する実用的な知識を習得し、これらのツールを利用者の生活に統合するための「ファシリテーター」「教師」「トラブルシューター」としての役割を理解する。</p>
+        </section>
+
+        <section id="session-12">
+            <h2 class="text-2xl font-bold">第12回：持続可能な専門職であるために：セルフケア、バーンアウト予防、およびピア・リーダーシップ</h2>
+            <p class="mb-4"><strong>目的：</strong> 専門職としてのウェルビーイング（心身の健康）が中核的な能力であることを理解させ、セルフケア、バーンアウト（燃え尽き症候群）予防、そしてピア・サポート（仲間による支え合い）のシステムを構築するためのツールを参加者に提供する。</p>
+        </section>
+    </div>
 
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- データ：元のHTMLから抽出した研修内容 ---
+    // --- データ：研修内容 ---
     const sessionsData = [
-        { id: 'session-1', title: '第1回', subtitle: '高度実践を支える専門的・法的枠組み', icon: 'fa-gavel' },
-        { id: 'session-2', title: '第2回', subtitle: '高度な病態生理学とロービジョンケア', icon: 'fa-diagnoses' },
-        { id: 'session-3', title: '第3回', subtitle: '情報提供の技術：高度な言語景観描写', icon: 'fa-palette' },
-        { id: 'session-4', title: '第4回', subtitle: '複雑・予測不能な環境の航法術', icon: 'fa-map-signs' },
-        { id: 'session-5', title: '第5回', subtitle: 'ケーススタディ：失敗と複雑性からの学び', icon: 'fa-users' },
-        { id: 'session-6', title: '第6回', subtitle: '複雑な生活行為の支援', icon: 'fa-tasks' },
-        { id: 'session-7', title: '第7回', subtitle: '盲ろう（Deafblind）者支援入門', icon: 'fa-hands-helping' },
-        { id: 'session-8', title: '第8回', subtitle: 'プロアクティブ・リスクマネジメント', icon: 'fa-shield-alt' },
-        { id: 'session-9', title: '第9回', subtitle: '文化的・余暇的参加の促進', icon: 'fa-glass-cheers' },
-        { id: 'session-10', title: '第10回', subtitle: '災害への備えと緊急時対応', icon: 'fa-house-damage' },
-        { id: 'session-11', title: '第11回', subtitle: '支援技術（アシスティブ・テクノロジー）', icon: 'fa-robot' },
-        { id: 'session-12', title: '第12回', subtitle: '持続可能な専門職であるために', icon: 'fa-seedling' },
+        { id: 'session-1', title: '第1回', subtitle: '高度実践を支える専門的・法的枠組み' },
+        { id: 'session-2', title: '第2回', subtitle: '高度な病態生理学とロービジョンケア' },
+        { id: 'session-3', title: '第3回', subtitle: '情報提供の技術：高度な言語景観描写' },
+        { id: 'session-4', title: '第4回', subtitle: '複雑・予測不能な環境の航法術' },
+        { id: 'session-5', title: '第5回', subtitle: 'ケーススタディ：失敗と複雑性からの学び' },
+        { id: 'session-6', title: '第6回', subtitle: '複雑な生活行為の支援' },
+        { id: 'session-7', title: '第7回', subtitle: '盲ろう（Deafblind）者支援入門' },
+        { id: 'session-8', title: '第8回', subtitle: 'プロアクティブ・リスクマネジメント' },
+        { id: 'session-9', title: '第9回', subtitle: '文化的・余暇的参加の促進' },
+        { id: 'session-10', title: '第10回', subtitle: '災害への備えと緊急時対応' },
+        { id: 'session-11', title: '第11回', subtitle: '支援技術（アシスティブ・テクノロジー）' },
+        { id: 'session-12', title: '第12回', subtitle: '持続可能な専門職であるために' },
     ];
     
     // --- 初期化処理 ---
-    const timelineContainer = document.querySelector('.timeline-item')?.parentElement;
+    const timelineContainer = document.getElementById('timeline-nav');
     const contentContainer = document.getElementById('session-content');
+    const originalContentSource = document.getElementById('original-content-source');
 
-    if (timelineContainer && contentContainer) {
+    if (timelineContainer && contentContainer && originalContentSource) {
         // タイムラインとコンテンツを生成
-        sessionsData.forEach((session, index) => {
+        sessionsData.forEach((session) => {
             // タイムラインナビゲーションの項目を生成
             const timelineLink = document.createElement('a');
             timelineLink.href = `#${session.id}`;
@@ -263,22 +387,18 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             timelineContainer.appendChild(timelineLink);
 
-            // コンテンツセクションを生成（最初は非表示）
-            const contentSection = document.createElement('div');
-            contentSection.id = session.id;
-            contentSection.className = 'session-detail bg-var-bg-white p-8 rounded-lg shadow-lg';
-            contentSection.style.display = 'none';
-            // 実際のコンテンツは元のHTMLから取得してここに挿入
-            const originalContent = document.getElementById(session.id);
-            if(originalContent) {
-                contentSection.innerHTML = originalContent.innerHTML;
-            } else {
-                contentSection.innerHTML = `<h2>${session.title}: ${session.subtitle}</h2><p>コンテンツは後ほど追加されます。</p>`;
+            // コンテンツセクションを生成
+            const originalSection = originalContentSource.querySelector(`#${session.id}`);
+            if (originalSection) {
+                const contentSection = document.createElement('div');
+                contentSection.id = session.id;
+                contentSection.className = 'session-detail bg-var-bg-white p-6 md:p-8 rounded-lg shadow-lg';
+                contentSection.style.display = 'none'; // 初期状態は非表示
+                contentSection.innerHTML = originalSection.innerHTML;
+                contentContainer.appendChild(contentSection);
             }
-            contentContainer.appendChild(contentSection);
         });
     }
-
 
     // --- イベントリスナーとロジック ---
 
@@ -328,10 +448,12 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.toggle('active', link.dataset.target === id);
         });
         sessionDetails.forEach(detail => {
-            detail.style.display = detail.id === id ? 'block' : 'none';
             if (detail.id === id) {
-                 // 新しいアコーディオンをセットアップ
+                detail.style.display = 'block';
+                // 表示する際にアコーディオンを再セットアップ
                 setupAccordions(detail);
+            } else {
+                detail.style.display = 'none';
             }
         });
     }
@@ -341,8 +463,6 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = e.currentTarget.dataset.target;
             setActiveSession(targetId);
-            // スムーズスクロール（必要に応じて）
-            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 
@@ -353,51 +473,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // アコーディオン機能
     function setupAccordions(container) {
-        const accordionButtons = container.querySelectorAll('.accordion-toggle-inner');
-        accordionButtons.forEach(button => {
+        const accordionToggles = container.querySelectorAll('.accordion-toggle-inner');
+        accordionToggles.forEach(toggle => {
             // 多重登録を防ぐ
-            if (button.dataset.accordionSetup) return;
-            button.dataset.accordionSetup = 'true';
+            if (toggle.dataset.accordionSetup) return;
+            toggle.dataset.accordionSetup = 'true';
 
-            const content = button.nextElementSibling;
-            // ARIA属性を設定
-            button.setAttribute('aria-expanded', 'false');
-            content.id = `content-${Math.random().toString(36).substr(2, 9)}`;
-            button.setAttribute('aria-controls', content.id);
-
-            button.addEventListener('click', () => {
-                const isExpanded = button.getAttribute('aria-expanded') === 'true';
-                button.setAttribute('aria-expanded', !isExpanded);
-                if (!isExpanded) {
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                    content.style.paddingTop = '1rem';
-                    content.style.paddingBottom = '1rem';
+            const content = toggle.nextElementSibling;
+            if (!content || !content.classList.contains('accordion-content-inner')) return;
+            
+            toggle.setAttribute('aria-expanded', 'false');
+            
+            toggle.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+                this.classList.toggle('active');
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
                 } else {
-                    content.style.maxHeight = '0';
-                    content.style.paddingTop = '0';
-                    content.style.paddingBottom = '0';
-                }
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } 
             });
         });
     }
 });
-
-// 元のHTMLコンテンツを非表示にする（データソースとしてのみ使用）
-const originalContentContainer = document.createElement('div');
-originalContentContainer.style.display = 'none';
-document.body.appendChild(originalContentContainer);
-
-// 元のHTMLの<main>以下のセクションを移動
-const mainContent = document.querySelector('main');
-if (mainContent) {
-    const sections = mainContent.querySelectorAll('section');
-    sections.forEach(section => {
-        if(section.id.startsWith('session-')) {
-            originalContentContainer.appendChild(section);
-        }
-    });
-}
-
 </script>
 </body>
 </html>
