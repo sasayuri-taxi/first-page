@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>同行援護 高度専門研修プログラム | 次世代の専門家へ</title>
+    
+    <!-- Tailwind CSSとFont AwesomeをCDNから読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fontsを読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSSカスタムプロパティ（変数）でデザインシステムを定義 */
+        :root {
+            --primary-color: #005A4F; /* 深い森のような緑 */
+            --secondary-color: #1a7d71;
+            --accent-color: #D4A373; /* 温かみのあるゴールド */
+            --bg-light: #F8F6F2; /* 柔らかな背景色 */
+            --bg-white: #FFFFFF;
+            --text-dark: #2D3748; /* 濃いグレー */
+            --text-light: #718096; /* 明るいグレー */
+            --border-color: #E2E8F0;
+        }
+
+        /* スムーズスクロールを有効化 */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 基本のフォントと色を設定 */
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* 見出し用のフォントを設定 */
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* スクロールに応じてフェードインするアニメーション */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 研修ロードマップのタイムライン用スタイル */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--bg-white);
+            border: 4px solid var(--primary-color);
+            top: 20px;
+            left: -10px;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        .timeline-item.active::before {
+            background-color: var(--primary-color);
+            transform: scale(1.2);
+        }
+        
+        /* アコーディオンのアイコン回転アニメーション */
+        .accordion-button .icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-button[aria-expanded="true"] .icon {
+            transform: rotate(180deg);
+        }
+        .accordion-content {
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        /* ヒーローセクションの背景グラデーション */
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0, 90, 79, 0.85), rgba(26, 125, 113, 0.7)), url('https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?q=80&w=2070&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- ヘッダー：スクロールしても追従し、背景が透けるデザイン -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-bold text-white text-xl font-poppins">
+                <a href="#hero">高度専門研修</a>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#introduction" class="text-white hover:text-var-accent-color transition-colors duration-300">理念</a>
+                <a href="#roadmap" class="text-white hover:text-var-accent-color transition-colors duration-300">研修内容</a>
+                <a href="#conclusion" class="text-white hover:text-var-accent-color transition-colors duration-300">結論</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- モバイル用メニュー -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-var-primary-color bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-8">
+        <a href="#introduction" class="mobile-nav-link text-white text-2xl font-poppins">理念</a>
+        <a href="#roadmap" class="mobile-nav-link text-white text-2xl font-poppins">研修内容</a>
+        <a href="#conclusion" class="mobile-nav-link text-white text-2xl font-poppins">結論</a>
+    </div>
+
+    <main>
+        <!-- ヒーローセクション：最初の画面 -->
+        <section id="hero" class="h-screen flex items-center justify-center text-white hero-gradient">
+            <div class="text-center px-4">
+                <h1 class="text-4xl md:text-6xl font-bold font-poppins leading-tight mb-4 reveal">有能な支援者から、<br>卓越した専門家へ</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto reveal" style="transition-delay: 200ms;">実践能力から専門的指導力への飛躍を目指す、12ヶ月間の高度専門研修プログラム</p>
+                <a href="#introduction" class="mt-8 inline-block bg-var-accent-color text-var-primary-color font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105 reveal" style="transition-delay: 400ms;">
+                    プログラム詳細へ <i class="fas fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- はじめに：プログラムの理念などを紹介 -->
+        <section id="introduction" class="py-20 md:py-32 bg-var-bg-light">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-var-primary-color font-poppins reveal">プログラムの理念</h2>
+                    <p class="text-var-text-light mt-4 max-w-2xl mx-auto reveal">単なる技術の習得を超え、次世代の同行援護を牽引するリーダーを育成します。</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="reveal">
+                        <h3 class="text-2xl font-bold text-var-primary-color mb-4 flex items-center"><i class="fas fa-scroll mr-3 text-var-accent-color"></i>専門的実践能力の確立</h3>
+                        <p class="mb-4">本プログラムは、従来の「基礎・応用技術」の先にある「専門的実践能力」の確立を目指します。複雑な状況下で高度な臨床的推論、倫理的判断、リーダーシップを発揮できる「卓越した専門家」を育成することが目標です。</p>
+                        <h3 class="text-2xl font-bold text-var-primary-color mb-4 mt-8 flex items-center"><i class="fas fa-calendar-alt mr-3 text-var-accent-color"></i>2025年新カリキュラムへの対応</h3>
+                        <p>2025年4月導入の新カリキュラムを見据え、サービス提供責任者の要件改定など、新しい時代の要請に応えるだけでなく、それを超える知識と技術の習得を支援します。</p>
+                    </div>
+                    <div class="reveal">
+                        <div class="space-y-6">
+                            <div class="bg-var-bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 transition-transform duration-300 hover:scale-105">
+                                <i class="fas fa-sitemap text-3xl text-var-accent-color mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg text-var-primary-color">体系的分析能力</h4>
+                                    <p class="text-sm text-var-text-light mt-1">複雑な状況を構造的に分解し、体系的なフレームワークで問題解決を図る能力。</p>
+                                </div>
+                            </div>
+                            <div class="bg-var-bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 transition-transform duration-300 hover:scale-105">
+                                <i class="fas fa-hand-holding-heart text-3xl text-var-accent-color mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg text-var-primary-color">利用者主体のエンパワーメント</h4>
+                                    <p class="text-sm text-var-text-light mt-1">支援者の役割を「代行者」から利用者の能力を高める「促進者」へと転換させる能力。</p>
+                                </div>
+                            </div>
+                            <div class="bg-var-bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 transition-transform duration-300 hover:scale-105">
+                                <i class="fas fa-lightbulb text-3xl text-var-accent-color mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg text-var-primary-color">省察的実践</h4>
+                                    <p class="text-sm text-var-text-light mt-1">自身の実践を批判的に分析し、継続的な専門的成長を自己管理する規律。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 研修ロードマップ：12回のセッションをタイムラインで表示 -->
+        <section id="roadmap" class="py-20 md:py-32 bg-var-bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-var-primary-color font-poppins reveal">12ヶ月間の学習ロードマップ</h2>
+                    <p class="text-var-text-light mt-4 max-w-2xl mx-auto reveal">各セッションをクリックして詳細を確認できます。</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <!-- 左側：タイムラインナビゲーション -->
+                    <div class="md:w-1/3">
+                        <div class="sticky top-24">
+                            <div class="relative border-l-2 border-var-border-color pl-8 space-y-8">
+                                <!-- JavaScriptで動的にセッションを生成 -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右側：セッション詳細コンテンツ -->
+                    <div id="session-content" class="md:w-2/3">
+                        <!-- JavaScriptで動的にコンテンツを生成 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 結論セクション -->
+        <section id="conclusion" class="py-20 md:py-32 bg-var-bg-light">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold text-var-primary-color font-poppins reveal">未来を担う専門家として</h2>
+                 <div class="max-w-3xl mx-auto mt-8 bg-var-bg-white p-8 rounded-lg shadow-lg reveal">
+                    <p class="text-var-text-dark text-left mb-4">本12ヶ月間の高度専門研修プログラムは、同行援護従業者が直面する現実の複雑さに対応し、彼らを単なる技術の実行者から、自律した思考力とリーダーシップを持つ専門家へと変革させることを目的としています。</p>
+                    <p class="text-var-text-dark text-left mb-4">プログラム全体を通じて、参加者は法的枠組みの深い理解から、高度な病態生理学、芸術的なレベルの言語景観描写、複雑な環境での航法術、そして体系的なリスクマネジメントに至るまで、多岐にわたる専門知識を習得します。特に、失敗事例からの学び、盲ろう者支援の基礎、最新支援技術の統合、災害時対応といった先進的なトピックは、参加者が未来の同行援護の現場で直面するであろう、あらゆる課題に対応できる能力を養います。</p>
+                    <p class="text-var-text-dark text-left">最終的に、本プログラムが目指すのは、技術的に熟達しているだけでなく、倫理観に優れ、利用者の権利を擁護し、自らの専門性とウェルビーイングを持続的に管理できる、省察的な実践者の育成です。このプログラムを修了した専門家は、2025年の新カリキュラムが求める水準を凌駕し、地域社会における視覚障害者支援の質を向上させ、次世代の指導者として、よりインクルーシブな社会の実現に貢献する中核的な人材となるでしょう。</p>
+                 </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-var-primary-color text-white">
+        <div class="container mx-auto py-8 px-6 text-center">
+            <p>&copy; 2025 介護サービスセンターささゆり監修 高度専門研修プログラム. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- データ：元のHTMLから抽出した研修内容 ---
+    const sessionsData = [
+        { id: 'session-1', title: '第1回', subtitle: '高度実践を支える専門的・法的枠組み', icon: 'fa-gavel' },
+        { id: 'session-2', title: '第2回', subtitle: '高度な病態生理学とロービジョンケア', icon: 'fa-diagnoses' },
+        { id: 'session-3', title: '第3回', subtitle: '情報提供の技術：高度な言語景観描写', icon: 'fa-palette' },
+        { id: 'session-4', title: '第4回', subtitle: '複雑・予測不能な環境の航法術', icon: 'fa-map-signs' },
+        { id: 'session-5', title: '第5回', subtitle: 'ケーススタディ：失敗と複雑性からの学び', icon: 'fa-users' },
+        { id: 'session-6', title: '第6回', subtitle: '複雑な生活行為の支援', icon: 'fa-tasks' },
+        { id: 'session-7', title: '第7回', subtitle: '盲ろう（Deafblind）者支援入門', icon: 'fa-hands-helping' },
+        { id: 'session-8', title: '第8回', subtitle: 'プロアクティブ・リスクマネジメント', icon: 'fa-shield-alt' },
+        { id: 'session-9', title: '第9回', subtitle: '文化的・余暇的参加の促進', icon: 'fa-glass-cheers' },
+        { id: 'session-10', title: '第10回', subtitle: '災害への備えと緊急時対応', icon: 'fa-house-damage' },
+        { id: 'session-11', title: '第11回', subtitle: '支援技術（アシスティブ・テクノロジー）', icon: 'fa-robot' },
+        { id: 'session-12', title: '第12回', subtitle: '持続可能な専門職であるために', icon: 'fa-seedling' },
+    ];
+    
+    // --- 初期化処理 ---
+    const timelineContainer = document.querySelector('.timeline-item')?.parentElement;
+    const contentContainer = document.getElementById('session-content');
+
+    if (timelineContainer && contentContainer) {
+        // タイムラインとコンテンツを生成
+        sessionsData.forEach((session, index) => {
+            // タイムラインナビゲーションの項目を生成
+            const timelineLink = document.createElement('a');
+            timelineLink.href = `#${session.id}`;
+            timelineLink.className = 'timeline-item block cursor-pointer group';
+            timelineLink.dataset.target = session.id;
+            timelineLink.innerHTML = `
+                <h4 class="font-bold text-lg text-var-primary-color group-hover:text-var-secondary-color transition-colors duration-300">${session.title}</h4>
+                <p class="text-sm text-var-text-light">${session.subtitle}</p>
+            `;
+            timelineContainer.appendChild(timelineLink);
+
+            // コンテンツセクションを生成（最初は非表示）
+            const contentSection = document.createElement('div');
+            contentSection.id = session.id;
+            contentSection.className = 'session-detail bg-var-bg-white p-8 rounded-lg shadow-lg';
+            contentSection.style.display = 'none';
+            // 実際のコンテンツは元のHTMLから取得してここに挿入
+            const originalContent = document.getElementById(session.id);
+            if(originalContent) {
+                contentSection.innerHTML = originalContent.innerHTML;
+            } else {
+                contentSection.innerHTML = `<h2>${session.title}: ${session.subtitle}</h2><p>コンテンツは後ほど追加されます。</p>`;
+            }
+            contentContainer.appendChild(contentSection);
+        });
+    }
+
+
+    // --- イベントリスナーとロジック ---
+
+    // スクロールでヘッダーのスタイルを変更
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('bg-var-primary-color/90', 'shadow-lg', 'backdrop-blur-sm');
+        } else {
+            header.classList.remove('bg-var-primary-color/90', 'shadow-lg', 'backdrop-blur-sm');
+        }
+    });
+
+    // モバイルメニューの開閉
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+    // スクロールに応じたアニメーション（Intersection Observer）
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    // タイムラインのクリックとスクロール追従
+    const timelineLinks = document.querySelectorAll('.timeline-item');
+    const sessionDetails = document.querySelectorAll('.session-detail');
+
+    function setActiveSession(id) {
+        timelineLinks.forEach(link => {
+            link.classList.toggle('active', link.dataset.target === id);
+        });
+        sessionDetails.forEach(detail => {
+            detail.style.display = detail.id === id ? 'block' : 'none';
+            if (detail.id === id) {
+                 // 新しいアコーディオンをセットアップ
+                setupAccordions(detail);
+            }
+        });
+    }
+    
+    timelineLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = e.currentTarget.dataset.target;
+            setActiveSession(targetId);
+            // スムーズスクロール（必要に応じて）
+            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    // 初期表示
+    if (sessionsData.length > 0) {
+        setActiveSession(sessionsData[0].id);
+    }
+
+    // アコーディオン機能
+    function setupAccordions(container) {
+        const accordionButtons = container.querySelectorAll('.accordion-toggle-inner');
+        accordionButtons.forEach(button => {
+            // 多重登録を防ぐ
+            if (button.dataset.accordionSetup) return;
+            button.dataset.accordionSetup = 'true';
+
+            const content = button.nextElementSibling;
+            // ARIA属性を設定
+            button.setAttribute('aria-expanded', 'false');
+            content.id = `content-${Math.random().toString(36).substr(2, 9)}`;
+            button.setAttribute('aria-controls', content.id);
+
+            button.addEventListener('click', () => {
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                button.setAttribute('aria-expanded', !isExpanded);
+                if (!isExpanded) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    content.style.paddingTop = '1rem';
+                    content.style.paddingBottom = '1rem';
+                } else {
+                    content.style.maxHeight = '0';
+                    content.style.paddingTop = '0';
+                    content.style.paddingBottom = '0';
+                }
+            });
+        });
+    }
+});
+
+// 元のHTMLコンテンツを非表示にする（データソースとしてのみ使用）
+const originalContentContainer = document.createElement('div');
+originalContentContainer.style.display = 'none';
+document.body.appendChild(originalContentContainer);
+
+// 元のHTMLの<main>以下のセクションを移動
+const mainContent = document.querySelector('main');
+if (mainContent) {
+    const sections = mainContent.querySelectorAll('section');
+    sections.forEach(section => {
+        if(section.id.startsWith('session-')) {
+            originalContentContainer.appendChild(section);
+        }
+    });
+}
+
+</script>
+</body>
+</html>
