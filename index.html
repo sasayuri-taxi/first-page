@@ -125,12 +125,16 @@
         .text-shadow-heavy {
             text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
         }
+        
+        /* ヘッダーに直接背景色を適用 */
+        #header {
+            background-color: var(--primary-color);
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- ★修正点：ヘッダーの背景を不透明に変更 -->
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-var-primary-color shadow-lg">
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-lg">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div>
                 <h1 class="font-bold text-white text-xl font-poppins text-shadow-heavy">
@@ -224,7 +228,8 @@
                 <div class="flex flex-col md:flex-row gap-8 lg:gap-16">
                     <!-- 左側：タイムラインナビゲーション -->
                     <div class="md:w-1/3">
-                        <div class="sticky top-28">
+                        <!-- ★修正点：stickyをmd以上でのみ適用 -->
+                        <div class="md:sticky top-28">
                             <div id="timeline-nav" class="relative border-l-2 border-var-border-color pl-8 space-y-8">
                                 <!-- JavaScriptで動的にセッションを生成 -->
                             </div>
@@ -452,6 +457,14 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = e.currentTarget.dataset.target;
             setActiveSession(targetId);
+
+            // ★修正点：スマホ表示でクリック時にコンテンツへスクロール
+            if (window.innerWidth < 768) { 
+                const contentElement = document.getElementById('session-content');
+                if (contentElement) {
+                    contentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
         });
     });
 
