@@ -249,12 +249,14 @@
         <!-- レポート提出セクションを結論の前に追加 -->
         <section id="report-submission" class="py-20 md:py-24 bg-var-secondary-color">
             <div class="container mx-auto px-6 text-center">
-                 <h2 class="text-3xl md:text-4xl font-bold text-white font-poppins reveal text-shadow-heavy">研修レポートの提出</h2>
+                 <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg inline-block reveal max-w-3xl">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white font-poppins text-shadow-heavy">研修レポートの提出</h2>
                     <p class="text-white text-lg mt-4 max-w-2xl mx-auto text-shadow-heavy">研修お疲れ様でした。以下のボタンからレポートを提出し、学びを記録してください。</p>
-                 <div class="mt-8 reveal">
-                     <a href="https://forms.gle/1ueUGxzpvifgPTo78" target="_blank" rel="noopener noreferrer" class="inline-block bg-var-accent-color text-var-primary-color font-bold py-4 px-10 rounded-full hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105 text-lg">
-                         <i class="fas fa-file-alt mr-2"></i> レポート提出フォームへ
-                     </a>
+                    <div class="mt-8">
+                        <a href="https://forms.gle/1ueUGxzpvifgPTo78" target="_blank" rel="noopener noreferrer" class="inline-block bg-var-accent-color text-var-primary-color font-bold py-4 px-10 rounded-full hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105 text-lg">
+                            <i class="fas fa-file-alt mr-2"></i> レポート提出フォームへ
+                        </a>
+                    </div>
                  </div>
             </div>
         </section>
@@ -279,23 +281,15 @@
         </div>
     </footer>
 
-    <!-- ★修正点：元のコンテンツを全てここに復元 -->
+    <!-- 元のHTMLコンテンツを非表示で埋め込むためのコンテナ -->
     <div id="original-content-source" style="display: none;">
         <section id="session-1">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-gavel text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第1回：高度実践を支える専門的・法的枠組み</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong> サービス提供のルールを単に知っているレベルから、障害者権利に関する法規を深く実践的に適用し、高度な職業倫理を体現するレベルへと移行する。</p>
-            <div class="mt-6">
-                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
-                <audio controls class="w-full">
-                    <source src="https://files.catbox.moe/sh00el.m4a" type="audio/mp4">
-                    ご使用のブラウザは音声の再生に対応していません。
-                </audio>
-            </div>
-            <h3 class="highlight-h3 flex items-center"><i class="fas fa-gavel mr-3 text-accent-color"></i>障害者差別解消法の徹底理解</h3>
-                <p>同行援護の専門家は、単にサービスを提供するだけでなく、利用者の市民的権利を擁護する最前線に立つ存在です。そのためには、法律の深い理解が不可欠となります。本セッションでは、障害者差別解消法における「不当な差別的取扱い」と「合理的配慮の提供」という2つの核心的概念を、具体的な事例を通じて徹底的に分析します。「不当な差別的取扱い」の具体例として、「障害を理由に窓口対応を拒否する」「必要がないにもかかわらず介助者の同行を強制する」「本人を無視して介助者にのみ話しかける」といったケースを検討します。さらに、過去の判例、例えば「視覚障害を理由に修学旅行への参加を拒否され、介助者の同行を求められた」事案が不当な差別に当たると判断されたケースなどを学ぶことで、法律が実社会でどのように解釈・適用されるかを理解します。</p>
-
-                <div class="mt-8">
+            <h3 class="text-xl font-bold flex items-center mt-6 text-var-primary-color"><i class="fas fa-gavel mr-3 text-var-accent-color"></i>障害者差別解消法の徹底理解</h3>
+            <p>同行援護の専門家は、単にサービスを提供するだけでなく、利用者の市民的権利を擁護する最前線に立つ存在です。そのためには、法律の深い理解が不可欠となります。本セッションでは、障害者差別解消法における「不当な差別的取扱い」と「合理的配慮の提供」という2つの核心的概念を、具体的な事例を通じて徹底的に分析します。「不当な差別的取扱い」の具体例として、「障害を理由に窓口対応を拒否する」「必要がないにもかかわらず介助者の同行を強制する」「本人を無視して介助者にのみ話しかける」といったケースを検討します。さらに、過去の判例、例えば「視覚障害を理由に修学旅行への参加を拒否され、介助者の同行を求められた」事案が不当な差別に当たると判断されたケースなどを学ぶことで、法律が実社会でどのように解釈・適用されるかを理解します。</p>
+        <div class="mt-8">
                     <button class="accordion-toggle-inner w-full">
                         <h3 class="flex-grow">ケーススタディ：合理的配慮を交渉する技術</h3>
                         <i class="fas fa-chevron-down icon"></i>
@@ -376,19 +370,13 @@
                             </ol>
                         </div>
                     </div>
-            </section>
-
+                </div>
+        </section>
+        
         <section id="session-2">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-eye text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第2回：高度な病態生理学とロービジョンケアの原則</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong> 医学的な診断名と、利用者の機能的な見え方、そして支援者が実践できる具体的なサポート戦略との間に、強固な橋を架ける。</p>
-             <div class="mt-6">
-                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
-                <audio controls class="w-full">
-                    <source src="https://files.catbox.moe/vkhdxx.m4a" type="audio/mp4">
-                    ご使用のブラウザは音声の再生に対応していません。
-                </audio>
-            </div>
             <h3 class="text-xl font-bold flex items-center mt-6 text-var-primary-color"><i class="fas fa-diagnoses mr-3 text-var-accent-color"></i>診断から機能へ：疾患別の見え方と支援戦略</h3>
             <p>同行援護の専門家は、単に「視覚障害者」を支援するのではありません。「特定の疾患に起因する、特有の見え方を持つ個人」を支援します。この違いを理解することが、高度な実践の第一歩です。本セッションでは、主要な疾患がもたらす機能的な影響を深く掘り下げます。</p>
         <ul class="list-none pl-0 space-y-4">
@@ -397,7 +385,6 @@
                     <li><strong>糖尿病網膜症・黄斑変性症：</strong> 「中心暗点（見たい中心が見えない）」や「変視症（物が歪んで見える）」が、看板の文字を読む、人の顔を認識する、金銭を扱うといった具体的なタスクにどう影響するかを検証します。顔を直接認識できない利用者に対しては、服装や髪型といった周辺情報で人物を特定する支援が有効であることを学びます。</li>
                     <li><strong>脳血管障害等に起因する視覚障害：</strong> 脳梗塞などによって生じる「同名半盲」という概念を導入します。これは、左右両眼の同じ側半分（例えば、右半分）が見えなくなる状態で、片目を失うこととは根本的に異なる障害です。この状態の利用者が、食事の際に皿の片側半分に気づかない、あるいは廊下の片側の壁にぶつかりやすいといった特有の困難を理解し、それに対応した支援方法（テーブルセッティングの工夫、誘導時の立ち位置の調整など）を習得します。</li>
                 </ul>
-
                 <h3 class="highlight-h3 flex items-center"><i class="fas fa-hands-helping mr-3 text-accent-color"></i>ロービジョンケアの導入：支援者の具体的役割</h3>
                 <p>ロービジョンケアの最も大切な考え方は、<strong>「見えないこと」を嘆くのではなく、「今ある見え方を最大限に活かす」</strong>ことにあります。支援者は、利用者が「自分の目」を使って、できるだけ多くの情報を得られるよう手助けする「環境設定のプロ」であり、「道具の使い方のサポーター」になることが求められます。</p>
                 <h4 class="text-lg font-bold">1. 環境を整えるプロになる</h4>
@@ -491,20 +478,13 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
         </section>
         
-
         <section id="session-3">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-palette text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第3回：情報提供の技術：高度な言語景観描写</h2>
              <p class="mb-4 mt-4"><strong>目的：</strong> 言語による情報提供のスキルを、単なる事実の伝達から、「言葉による風景画」を描く芸術の域へと高める。</p>
-             <div class="mt-6">
-                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
-                <audio controls class="w-full">
-                    <source src="https://files.catbox.moe/zmlrxx.m4a" type="audio/mp4">
-                    ご使用のブラウザは音声の再生に対応していません。
-                </audio>
-            </div>
             <h3 class="text-xl font-bold flex items-center mt-6 text-var-primary-color"><i class="fas fa-palette mr-3 text-var-accent-color"></i>美術館の実践から学ぶ描写の基礎</h3>
             <p>我々は、美術館の学芸員や解説者が美術作品を言語化するために洗練させてきた高度な技術を、日常の景観描写に応用します。</p>
         <h4 class="text-lg font-bold">1. 「全体から詳細へ」の原則</h4>
@@ -576,24 +556,19 @@
                                 <li><strong>非言語的情報の描写（人間関係のヒント）：</strong>「今、〇〇さんが話している相手の方は、笑顔で頷いていますね。とても楽しそうです。」「あちらのテーブルに、先ほど名刺交換した△△さんが一人でいらっしゃいますよ。」</li>
                                 <li><strong>会話への参加を促す（橋渡し役）：</strong>「〇〇さん、こんにちは。△△さんがご挨拶したいそうです。」「△△さん、今ちょうどお話が終わったようです。声をかけてみますか？」</li>
                             </ul>
-                <p class="mt-8 font-semibold">支援者が提供する情報は、単なる環境のコピーではありません。それは、利用者が世界を理解し、安全に行動し、社会に参加するための、生命線とも言えるインターフェースです。このモジュールを通じて、参加者はそのインターフェースを設計・構築するための高度な技術を習得します。これは、直感的な「おしゃべり」を、専門的な規律へと昇華させるプロセスです。 </p>
-           </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-8 font-semibold">支援者が提供する情報は、単なる環境のコピーではありません。それは、利用者が世界を理解し、安全に行動し、社会に参加するための、生命線とも言えるインターフェースです。このモジュールを通じて、参加者はそのインターフェースを設計・構築するための高度な技術を習得します。これは、直感的な「おしゃべり」を、専門的な規律へと昇華させるプロセスです。</p>
         </section>
 
         <section id="session-4">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-map-signs text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第4回：複雑・予測不能な環境の航法術</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong> 基本的な誘導技術では対応困難な、非定型的で挑戦的な環境において、安全かつ効率的に利用者を支援するための高度な認知ツールと戦略的思考を習得する。</p>
-            <div class="mt-6">
-                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
-                <audio controls class="w-full">
-                    <source src="https://files.catbox.moe/56qdy9.m4a" type="audio/mp4">
-                    ご使用のブラウザは音声の再生に対応していません。
-                </audio>
-            </div>
             <h3 class="text-xl font-bold flex items-center mt-6 text-var-primary-color"><i class="fas fa-map-signs mr-3 text-var-accent-color"></i>環境の分析と予測</h3>
             <p>高度なナビゲーションは、まず環境を正確に分析することから始まります。</p>
-            <h4 class="text-lg font-bold">1. 課題の分解：危険を「見える化」する技術</h4>
+        <h4 class="text-lg font-bold">1. 課題の分解：危険を「見える化」する技術</h4>
                 <p>これは、「ただ何となく危ない」という感覚を、具体的で対処可能な「課題リスト」に変える思考プロセスです。プロの支援者は、単に障害物を避けるだけでなく、その環境に潜むあらゆるリスクを体系的に洗い出す必要があります。</p>
                 <h5 class="text-md font-bold">静的なハザード（動かない危険）の分析：</h5>
                 <ul class="list-disc list-inside pl-4">
@@ -712,22 +687,15 @@
                             </ul>
                             <p class="mt-4">これらの情報を統合（フュージョン）すると、次のような高度な情報提供ができます。<br>「ホームの床から電車の振動が伝わってきますね。到着のアナウンスも聞こえますので、まもなく私たちが乗る電車が目の前に止まります。黄色い線の内側で、安全に待ちましょう。」</p>
                         </div>
-                    </div>
-                </div>
                 <p class="mt-4">このように、センサーフュージョンを実践することで、支援者は単に見えるものを伝える「実況者」から、**五感で得たすべての情報を統合・分析し、未来を予測して利用者を安全に導く「プロのナビゲーター」**へと進化することができるのです。</p>
         </section>
 
+        
         <section id="session-5">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-lightbulb text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第5回：ケーススタディ・ワークショップ：失敗と複雑性からの学び</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong> 実際の困難事例や失敗談を体系的に分析することを通じて、専門職としての省察の文化を育み、非難から学びへと転換することで、継続的な質の向上を図る。</p>
-            <div class="mt-6">
-                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
-                <audio controls class="w-full">
-                    <source src="https://files.catbox.moe/lqa421.m4a" type="audio/mp4">
-                    ご使用のブラウザは音声の再生に対応していません。
-                </audio>
-            </div> <h3 class="subsection-title">専門的失敗の心理学</h3>
+        <h3 class="subsection-title">専門的失敗の心理学</h3>
                 <p>本モジュールは、航空業界や医療業界といったハイステークスな専門職において、なぜ失敗の分析が専門家育成に不可欠であるかを学ぶことから始まります。そして、参加者が安心して正直な議論ができる心理的に安全な環境をどのように作るかについて合意形成を図ります。</p>
                 <h3 class="subsection-title">構造化された事例分析</h3>
                 <div class="mt-4 space-y-4">
@@ -821,20 +789,14 @@
                 <h5 class="text-xl text-green-700 font-bold">システムを分析する考え方（成熟したアプローチ）：</h5>
                 <p>ここで言う「システム」とは、大げさなものではなく、**「自分の仕事のやり方や手順」**のことです。<br>上記の事例で言えば、問題は「私の注意力が足りなかった」こと以上に、「**初めての店に行く際の私の『手順（システム）』**に、レイアウトを最初に確認するというステップが欠けていた」ことにある、と捉えます。<br>このように考えると、解決策は「気をつける」ではなく、<strong class="text-blue-600 text-lg">「自分の手順書（マニュアル）を更新する」</strong>ことになります。「初めての屋内施設での支援マニュアル」の第1項に、「入口で全体レイアウトを説明する」と書き加えるのです。</p>
                 <p>このように、失敗を個人の資質の問題にせず、<strong class="text-blue-600 text-lg">「仕組み」や「プロセス」の問題</strong>として捉え直すことで、誰がやっても同じ失敗が起こりにくい、より安全で質の高い支援の仕組みを構築していくことができます。これが、プロフェッショナルが行う「経験からの学習」なのです。</p>
-    
+
         </section>
 
         <section id="session-6">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-tasks text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第6回：複雑な生活行為の支援</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong> 単なる移動を超え、高度な専門性が求められる生活行為において、利用者を効果的に支援するための専門知識と技術を提供する。</p>
-            <div class="mt-6">
-                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
-                <audio controls class="w-full">
-                    <source src="https://files.catbox.moe/lylrml.m4a" type="audio/mp4">
-                    ご使用のブラウザは音声の再生に対応していません。
-                </audio>
-            </div><h3 class="subsection-title">第1部：高度な正確性が求められる行政・金融手続き</h3>
+                <h3 class="subsection-title">第1部：高度な正確性が求められる行政・金融手続き</h3>
                 <h4 class="text-xl">1. 精密な「代読」：あなたは「人間のスキャナー」である</h4>
                 <p>この役割で最も重要なのは、自分自身の解釈や意見を一切挟まず、書かれている情報を100%忠実に音声に変換することです。支援者は、いわば「人間のスキャナー」に徹する必要があります。</p>
                 <h5>なぜ解釈は厳禁なのか？</h5>
@@ -957,23 +919,15 @@
                             <li><strong>道具や材料の説明：</strong> 「こちらが粘土を削るためのヘラです。木の感触で、先端が少し平たくなっていますね。これで粘土の表面を滑らかにしてみましょう。」と、道具の形や使い方を伝えます。</li>
                             <li><strong>他の参加者との交流支援：</strong> 「隣の席の△△さんが、『素敵な形のお茶碗ができましたね』と話しかけていますよ。」のように、周りからのポジティブな反応を伝えることで、利用者と他の参加者との自然な交流を促します。</li>
                         </ul>
-                    </div>
-                </div>
                 <p class="mt-4">これらのスキルは、同行援護が単なる移動の保障だけでなく、利用者の**QOL（生活の質）**を高め、社会参加を豊かにするための専門的な支援であることを示しています。</p>
-    
+            </div>
         </section>
+        
 
         <section id="session-7">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-hands-helping text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第7回：盲ろう（Deafblind）者支援入門</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong> 高度な実践者に対し、盲ろうコミュニティの特有なニーズに関する基礎的な認識を提供し、基本的なコミュニケーション方法を習得させる。</p>
-            <div class="mt-6">
-                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
-                <audio controls class="w-full">
-                    <source src="https://files.catbox.moe/blno67.m4a" type="audio/mp4">
-                    ご使用のブラウザは音声の再生に対応していません。
-                </audio>
-            </div>
         <h3>盲ろうの多様性の理解</h3>
                 <h4>「盲ろう」の多様性について</h4>
                 <p>「盲ろう」と一言で言っても、その状態は一人ひとり全く異なります。支援者は、その方がどのタイプに当てはまるのかを理解することで、より適切なサポートを提供できます。大きく分けて、**「見え方・聞こえ方の違い」と「障害になった時期の違い」**の2つの軸で考えると分かりやすくなります。</p>
@@ -1120,21 +1074,13 @@
                     <li><strong>情報提供：</strong> 責任者と相談の上、利用者本人やご家族に「盲ろう者向けの通訳・介助員派遣事業というものがありますよ」と、専門サービスの存在を情報提供することも大切な支援の一つです。</li>
                 </ul>
                 <p class="mt-4 font-semibold">真のプロフェッショナルとは、何でも一人でできる人ではなく、自分の限界を理解し、チームとして、より良い支援を提供するために他者と連携できる人のことです。</p>
-    
         </section>
-
+        
         <section id="session-8">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-shield-alt text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第8回：プロアクティブ・リスクマネジメントと体系的事故防止</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong>支援者の思考様式を、事故に事後対応する「リアクティブ」なものから、リスクを体系的かつ根拠に基づいて特定、分析、軽減する「プロアクティブ」なものへと転換させる。</p>
-            <div class="mt-6">
-                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
-                <audio controls class="w-full">
-                    <source src="https://files.catbox.moe/hwh4ad.m4a" type="audio/mp4">
-                    ご使用のブラウザは音声の再生に対応していません。
-                </audio>
-            </div>
-            <h3 class="subsection-title">「気をつけて」を超えて：体系的リスクマネジメントの導入</h3>
+        <h3 class="subsection-title">「気をつけて」を超えて：体系的リスクマネジメントの導入</h3>
                 <h4>なぜ「気をつけて」だけではダメなのか？</h4>
                 <p>支援の現場では、ミスが起こるとつい「これからはもっと気をつけよう」「注意力が足りなかった」といった個人の反省に陥りがちです。しかし、この考え方には限界があります。なぜなら、人間は誰でも、どんなに注意していても、疲労や体調、一瞬の気の緩みでミスを犯す可能性があるからです。<br>「気をつける」という対策は、いわば**「堤防にひび割れが見つかったので、見張りを増やして水が漏れないように頑張る」**ようなものです。一時的には防げるかもしれませんが、堤防そのものが弱っていれば、いつか必ず決壊してしまいます。</p>
                 
@@ -1245,20 +1191,13 @@
                     </table>
                 </div>
                 <p class="mt-4 font-semibold">真の安全文化とは、事故ゼロを達成することではなく、小さな失敗（ヒヤリハット）から学び、壊滅的な失敗を防ぐための強固なシステムを持つことです。高度な専門家は、単に安全な支援者であるだけでなく、このシステムを構築し、改善に貢献する安全のリーダーでもあります。このモジュールは、支援者を安全ルールの遵守者から、安全システムの改善者へと引き上げるための、重要な役割を果たします。</p>
-
         </section>
 
         <section id="session-9">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-glass-cheers text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第9回：文化的・余暇的参加の促進：統合的ケーススタディ</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong>参加者がこれまでに学んだ複数の高度なスキルを、管理的かつ現実的な文脈で統合的に検討するための、集大成となるケーススタディモジュールとして機能させる。</p>
-            <div class="mt-6">
-                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
-                <audio controls class="w-full">
-                    <source src="https://files.catbox.moe/nzkg0n.m4a" type="audio/mp4">
-                    ご使用のブラウザは音声の再生に対応していません。
-                </audio>
-                <h3 class="text-xl font-bold">第1段階：計画フェーズ（講義・ディスカッション）</h3>
+        <h3 class="text-xl font-bold">第1段階：計画フェーズ（講義・ディスカッション）</h3>
                 <ul class="list-disc list-inside pl-4">
                     <li><strong>事前調査：</strong> 参加者は、フェスティバルの公式サイトや地域の情報サイトを調査し、会場マップ、出店リスト、ステージのタイムテーブル、多目的トイレや救護所の場所など、アクセシビリティに関する情報を収集する方法を学びます。また、SNSなどで当日の混雑状況をリアルタイムに把握する方法についても議論します。</li>
                     <li><strong>プロアクティブなコミュニケーション：</strong> イベントの運営事務局に電話をかけ、「会場内に比較的空いていて休憩できるスペースはありますか？」「アレルギー表示について、各屋台で確認できますか？」など、特定のニーズについて事前に問い合わせる際のポイントについてディスカッションを行います。</li>
@@ -1279,20 +1218,13 @@
                 </ul>
                 <p>このピア・フィードバック（仲間からのフィードバック）は、スキルを洗練させる上で極めて重要です 。</p>
                 <p class="mt-4 font-semibold">地域のフェスティバルという身近な題材を用いることで、参加者は特別な機材なしに、これまでに学んだ多様なスキルを統合し、実践的に検討することができます。この集大成となるケーススタディは、教室での学習だけでは得られない、スキルの定着と深化を促します。</p>
-            </div>
         </section>
 
-         <section id="session-10">
+        <section id="session-10">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-house-damage text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第10回：災害への備えと緊急時対応</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong>政府の公式ガイドラインに基づき、大規模災害の全てのフェーズにおいて、視覚障害のある利用者を効果的に支援するために不可欠な知識と意思決定スキルを、支援者に習得させる。</p>
-            <div class="mt-6">
-                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
-                <audio controls class="w-full">
-                    <source src="https://files.catbox.moe/pgy1a3.m4a" type="audio/mp4">
-                    ご使用のブラウザは音声の再生に対応していません。
-                </audio>
-            <p>本モジュールは、包括的な災害マニュアルに基づき、段階的な対応計画として構成されます 。</p>
+        <p>本モジュールは、包括的な災害マニュアルに基づき、段階的な対応計画として構成されます 。</p>
                 <h3 class="subsection-title">第1段階：災害発生前の「備え」</h3>
                 <p>この段階の目的は、災害が「いつか来る」という前提に立ち、利用者と支援者が共に、パニックにならずに行動できる準備を整えておくことです。</p>
                 <h4>個人の備えを、より具体的に支援する</h4>
@@ -1367,20 +1299,13 @@
                     </table>
                 </div>
                 <p class="mt-4 font-semibold">災害対応は単一の行動ではなく、各段階で支援者の役割が進化していく多段階のプロセスです。この段階的かつ戦略的なアプローチを学ぶことで、支援者は圧倒されることなく、効果的な支援を提供することができます。</p>
-            </div>
         </section>
 
         <section id="session-11">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-robot text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第11回：支援の未来：支援技術（アシスティブ・テクノロジー）の統合</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong> 支援者が、現在および将来登場する支援技術に関する実用的な知識を習得し、これらのツールを利用者の生活に統合するための役割を理解する。</p>
-            <div class="mt-6">
-                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
-                <audio controls class="w-full">
-                    <source src="https://files.catbox.moe/cemkz5.m4a" type="audio/mp4">
-                    ご使用のブラウザは音声の再生に対応していません。
-                </audio>
-            <h3 class="subsection-title">現代のツールキット：スマートフォンアプリ</h3>
+        <h3 class="subsection-title">現代のツールキット：スマートフォンアプリ</h3>
                 <h4>1. 現代のツールキット：スマートフォンアプリ</h4>
                 <p>これは、今や多くの人が持っているスマートフォンを、強力な支援ツールとして活用する考え方です。支援者は、これらのアプリが「何ができて、何が苦手か」を正確に理解する必要があります。</p>
                 <h5>物体・文字認識アプリ（Seeing AI, Sullivan+など）</h5>
@@ -1457,21 +1382,13 @@
                     </table>
                 </div>
                 <p class="mt-4 font-semibold">新しいテクノロジーがもたらす最大の挑戦は、技術そのものではなく、それをいかに効果的に人間の生活に統合するかです。高度な支援者の未来の役割は、テクノロジーと競争することではなく、人間と技術のインターフェースを管理する専門家になることです。このモジュールは、技術が豊かな世界で、人間の判断力と適応性がさらに価値を持つようになる未来の専門職を育成します。</p>
-            </div>
-
         </section>
 
         <section id="session-12">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-seedling text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第12回：持続可能な専門職であるために：セルフケア、バーンアウト予防、およびピア・リーダーシップ</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong> 専門職としてのウェルビーイングが中核的な能力であることを理解させ、セルフケア、バーンアウト予防、およびピア・サポートのシステムを構築するためのツールを提供する。</p>
-            <div class="mt-6">
-                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
-                <audio controls class="w-full">
-                    <source src="https://files.catbox.moe/nvs9ql.m4a" type="audio/mp4">
-                    ご使用のブラウザは音声の再生に対応していません。
-                </audio>
-            <h3 class="subsection-title">1. 専門職としてのバーンアウト（燃え尽き症候群）の理解</h3>
+        <h3 class="subsection-title">1. 専門職としてのバーンアウト（燃え尽き症候群）の理解</h3>
                 <h4>なぜ重要なのか？</h4>
                 <p>「バーンアウト」は「やる気をなくした」といった根性の問題ではなく、慢性的なストレスによって心と体のエネルギーが枯渇してしまった状態、つまり一種の職業病です。これを個人の弱さだと考えると、一人で抱え込み、さらに深刻な状態に陥ってしまいます。プロとして長く働き続けるためには、まずこれを**「予測可能な職業上のリスク」**として正しく理解することが第一歩です。</p>
                 <h4>同行援護に特有のストレッサー（ストレスの原因）とは？</h4>
@@ -1522,8 +1439,6 @@
                     </li>
                 </ul>
                 <p>このように、具体的な目標と期限を設定することで、専門職としてのキャリアを持続的に、そして主体的に築いていくことができるようになります。</p>
-            </div>
-            
         </section>
     </div>
 
@@ -1533,18 +1448,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- データ：研修内容 ---
     const sessionsData = [
-        { id: 'session-1', title: '第1回', subtitle: '高度実践を支える専門的・法的枠組み' },
-        { id: 'session-2', title: '第2回', subtitle: '高度な病態生理学とロービジョンケア' },
-        { id: 'session-3', title: '第3回', subtitle: '情報提供の技術：高度な言語景観描写' },
-        { id: 'session-4', title: '第4回', subtitle: '複雑・予測不能な環境の航法術' },
-        { id: 'session-5', title: '第5回', subtitle: 'ケーススタディ：失敗と複雑性からの学び' },
-        { id: 'session-6', title: '第6回', subtitle: '複雑な生活行為の支援' },
-        { id: 'session-7', title: '第7回', subtitle: '盲ろう（Deafblind）者支援入門' },
-        { id: 'session-8', title: '第8回', subtitle: 'プロアクティブ・リスクマネジメント' },
-        { id: 'session-9', title: '第9回', subtitle: '文化的・余暇的参加の促進' },
-        { id: 'session-10', title: '第10回', subtitle: '災害への備えと緊急時対応' },
-        { id: 'session-11', title: '第11回', subtitle: '支援技術（アシスティブ・テクノロジー）' },
-        { id: 'session-12', title: '第12回', subtitle: '持続可能な専門職であるために' },
+        { id: 'session-1', title: '第1回', subtitle: '高度実践を支える専門的・法的枠組み', audioSrc: 'https://files.catbox.moe/sh00el.m4a' },
+        { id: 'session-2', title: '第2回', subtitle: '高度な病態生理学とロービジョンケア', audioSrc: 'https://files.catbox.moe/vkhdxx.m4a' },
+        { id: 'session-3', title: '第3回', subtitle: '情報提供の技術：高度な言語景観描写', audioSrc: 'https://files.catbox.moe/zmlrxx.m4a' },
+        { id: 'session-4', title: '第4回', subtitle: '複雑・予測不能な環境の航法術', audioSrc: 'https://files.catbox.moe/56qdy9.m4a' },
+        { id: 'session-5', title: '第5回', subtitle: 'ケーススタディ：失敗と複雑性からの学び', audioSrc: 'https://files.catbox.moe/lqa421.m4a' },
+        { id: 'session-6', title: '第6回', subtitle: '複雑な生活行為の支援', audioSrc: 'https://files.catbox.moe/lylrml.m4a' },
+        { id: 'session-7', title: '第7回', subtitle: '盲ろう（Deafblind）者支援入門', audioSrc: 'https://files.catbox.moe/blno67.m4a' },
+        { id: 'session-8', title: '第8回', subtitle: 'プロアクティブ・リスクマネジメント', audioSrc: 'https://files.catbox.moe/hwh4ad.m4a' },
+        { id: 'session-9', title: '第9回', subtitle: '文化的・余暇的参加の促進', audioSrc: 'https://files.catbox.moe/nzkg0n.m4a' },
+        { id: 'session-10', title: '第10回', subtitle: '災害への備えと緊急時対応', audioSrc: 'https://files.catbox.moe/pgy1a3.m4a' },
+        { id: 'session-11', title: '第11回', subtitle: '支援技術（アシスティブ・テクノロジー）', audioSrc: 'https://files.catbox.moe/cemkz5.m4a' },
+        { id: 'session-12', title: '第12回', subtitle: '持続可能な専門職であるために', audioSrc: 'https://files.catbox.moe/nvs9ql.m4a' },
     ];
     
     // --- 初期化処理 ---
@@ -1619,7 +1534,25 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionDetails.forEach(detail => {
             if (detail.id === id) {
                 detail.style.display = 'block';
-                // 表示する際にアコーディオンを再セットアップ
+                // ★修正点：音声プレーヤーがまだなければ生成する
+                if (!detail.querySelector('audio')) {
+                    const sessionInfo = sessionsData.find(s => s.id === id);
+                    if (sessionInfo && sessionInfo.audioSrc) {
+                        const audioPlayerHTML = `
+                            <div class="mt-6">
+                                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
+                                <audio controls class="w-full" preload="auto">
+                                    <source src="${sessionInfo.audioSrc}" type="audio/mp4">
+                                    ご使用のブラウザは音声の再生に対応していません。
+                                </audio>
+                            </div>
+                        `;
+                        const purposeParagraph = detail.querySelector('p');
+                        if (purposeParagraph) {
+                            purposeParagraph.insertAdjacentHTML('afterend', audioPlayerHTML);
+                        }
+                    }
+                }
                 setupAccordions(detail);
             } else {
                 detail.style.display = 'none';
