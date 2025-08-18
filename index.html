@@ -130,6 +130,10 @@
         #header {
             background-color: var(--primary-color);
         }
+        
+        #mobile-menu {
+            background-color: var(--primary-color);
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -154,8 +158,7 @@
             </div>
         </div>
     </header>
-    <!-- モバイル用メニュー -->
-    <div id="mobile-menu" class="hidden fixed inset-0 bg-var-primary-color bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-8">
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 flex flex-col items-center justify-center space-y-8">
         <a href="#introduction" class="mobile-nav-link text-white text-2xl font-poppins">理念</a>
         <a href="#roadmap" class="mobile-nav-link text-white text-2xl font-poppins">研修内容</a>
         <a href="#conclusion-section" class="mobile-nav-link text-white text-2xl font-poppins">結論</a>
@@ -228,7 +231,6 @@
                 <div class="flex flex-col md:flex-row gap-8 lg:gap-16">
                     <!-- 左側：タイムラインナビゲーション -->
                     <div class="md:w-1/3">
-                        <!-- ★修正点：stickyをmd以上でのみ適用 -->
                         <div class="md:sticky top-28">
                             <div id="timeline-nav" class="relative border-l-2 border-var-border-color pl-8 space-y-8">
                                 <!-- JavaScriptで動的にセッションを生成 -->
@@ -277,78 +279,272 @@
         </div>
     </footer>
 
-    <!-- 元のHTMLコンテンツを非表示で埋め込むためのコンテナ -->
+    <!-- ★修正点：元のコンテンツを全てここに復元 -->
     <div id="original-content-source" style="display: none;">
         <section id="session-1">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-gavel text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第1回：高度実践を支える専門的・法的枠組み</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong> サービス提供のルールを単に知っているレベルから、障害者権利に関する法規を深く実践的に適用し、高度な職業倫理を体現するレベルへと移行する。</p>
+            <div class="mt-6">
+                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
+                <audio controls class="w-full">
+                    <source src="https://files.catbox.moe/sh00el.m4a" type="audio/mp4">
+                    ご使用のブラウザは音声の再生に対応していません。
+                </audio>
+            </div>
+            <h3 class="text-xl font-bold flex items-center mt-6 text-var-primary-color"><i class="fas fa-gavel mr-3 text-var-accent-color"></i>障害者差別解消法の徹底理解</h3>
+            <p>同行援護の専門家は、単にサービスを提供するだけでなく、利用者の市民的権利を擁護する最前線に立つ存在です。そのためには、法律の深い理解が不可欠となります。本セッションでは、障害者差別解消法における「不当な差別的取扱い」と「合理的配慮の提供」という2つの核心的概念を、具体的な事例を通じて徹底的に分析します。「不当な差別的取扱い」の具体例として、「障害を理由に窓口対応を拒否する」「必要がないにもかかわらず介助者の同行を強制する」「本人を無視して介助者にのみ話しかける」といったケースを検討します。さらに、過去の判例、例えば「視覚障害を理由に修学旅行への参加を拒否され、介助者の同行を求められた」事案が不当な差別に当たると判断されたケースなどを学ぶことで、法律が実社会でどのように解釈・適用されるかを理解します。</p>
         </section>
 
         <section id="session-2">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-eye text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第2回：高度な病態生理学とロービジョンケアの原則</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong> 医学的な診断名と、利用者の機能的な見え方、そして支援者が実践できる具体的なサポート戦略との間に、強固な橋を架ける。</p>
+             <div class="mt-6">
+                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
+                <audio controls class="w-full">
+                    <source src="https://files.catbox.moe/vkhdxx.m4a" type="audio/mp4">
+                    ご使用のブラウザは音声の再生に対応していません。
+                </audio>
+            </div>
+            <h3 class="text-xl font-bold flex items-center mt-6 text-var-primary-color"><i class="fas fa-diagnoses mr-3 text-var-accent-color"></i>診断から機能へ：疾患別の見え方と支援戦略</h3>
+            <p>同行援護の専門家は、単に「視覚障害者」を支援するのではありません。「特定の疾患に起因する、特有の見え方を持つ個人」を支援します。この違いを理解することが、高度な実践の第一歩です。本セッションでは、主要な疾患がもたらす機能的な影響を深く掘り下げます。</p>
+        
+         <ul class="list-none pl-0 space-y-4">
+                    <li><strong>緑内障：</strong> 特徴的な「求心性視野狭窄（トンネルビジョン）」が、移動時にどのようなリスク（側方からの障害物への衝突など）を生むかを分析します。そして、そのリスクを軽減するための誘導技術（支援者が利用者のやや前方かつ側方に位置取る、角を曲がる際に大きな円弧を描くなど）や、利用者が効率的に周囲を走査（スキャニング）するための声かけの方法を学びます。</li>
+                    <li><strong>網膜色素変性症：</strong> 「夜盲」と進行性の周辺視野欠損に焦点を当てます。これが夜間の外出計画や、レストランなどの薄暗い空間での移動にどう影響するかを考え、ペンライトの活用法や、段差などの情報を事前に具体的に伝えることの重要性を確認します。</li>
+                    <li><strong>糖尿病網膜症・黄斑変性症：</strong> 「中心暗点（見たい中心が見えない）」や「変視症（物が歪んで見える）」が、看板の文字を読む、人の顔を認識する、金銭を扱うといった具体的なタスクにどう影響するかを検証します。顔を直接認識できない利用者に対しては、服装や髪型といった周辺情報で人物を特定する支援が有効であることを学びます。</li>
+                    <li><strong>脳血管障害等に起因する視覚障害：</strong> 脳梗塞などによって生じる「同名半盲」という概念を導入します。これは、左右両眼の同じ側半分（例えば、右半分）が見えなくなる状態で、片目を失うこととは根本的に異なる障害です。この状態の利用者が、食事の際に皿の片側半分に気づかない、あるいは廊下の片側の壁にぶつかりやすいといった特有の困難を理解し、それに対応した支援方法（テーブルセッティングの工夫、誘導時の立ち位置の調整など）を習得します。</li>
+                </ul>
+                <h3 class="highlight-h3 flex items-center"><i class="fas fa-hands-helping mr-3 text-accent-color"></i>ロービジョンケアの導入：支援者の具体的役割</h3>
+                <p>ロービジョンケアの最も大切な考え方は、<strong>「見えないこと」を嘆くのではなく、「今ある見え方を最大限に活かす」</strong>ことにあります。支援者は、利用者が「自分の目」を使って、できるだけ多くの情報を得られるよう手助けする「環境設定のプロ」であり、「道具の使い方のサポーター」になることが求められます。</p>
+                <h4 class="text-lg font-bold">1. 環境を整えるプロになる</h4>
+                <p>利用者の見え方は、周りの環境、特に<strong>「光」と「コントラスト（色の対比）」</strong>に大きく影響されます。</p>
+                <ul class="list-none pl-0 space-y-2">
+                    <li><strong>光の調整（照明）：</strong> まぶしさ（グレア）の防止や、明るさの確保といった配慮が有効です。</li>
+                    <li><strong>コントラストの活用：</strong> 食器の選び方や、背景との対比を工夫することで、物が見やすくなります。</li>
+                </ul>
+                <h4 class="text-lg font-bold">2. 道具の活用を助けるサポーターになる</h4>
+                <p>利用者は、眼科医や専門機関から拡大鏡や遮光眼鏡などを処方されていることがあります。これらは非常に有効な道具ですが、使いこなすには少しコツが必要です。</p>
+                <ul class="list-none pl-0 space-y-2">
+                    <li><strong>拡大鏡のサポート：</strong> 利用者がうまくピントを合わせられない様子であれば、最適な距離を見つける手助けをします。</li>
+                    <li><strong>遮光眼鏡の理解：</strong> 利用者がなぜその眼鏡を使っているのかを理解し、適切な声かけができると、より専門的なサポートになります。</li>
+                </ul>
+                <h4 class="text-lg font-bold">3. 視覚を「補強」する情報提供</h4>
+                <p>支援者は何でもかんでも言葉で説明するのではなく、利用者が自分の目で見ている情報を言葉で補強する役割を担います。</p>
+                <p><strong>良い例：</strong> 「メニューの一番上に、大きな写真付きで載っているのがAランチのようです。文字は読めそうですか？」</p>
+                <h3 class="highlight-h3 flex items-center"><i class="fas fa-puzzle-piece mr-3 text-accent-color"></i>重複障害への理解：困難の「掛け算」に対応する</h3>
+                <p>重複障害のある方の支援では、それぞれの障害がどのように影響し合うかを理解し、支援を足し算ではなく掛け算で考える必要があります。</p>
+                <div class="mt-4 space-y-4">
+                    <div class="accordion-toggle-inner w-full">
+                        <h4 class="text-lg font-bold text-gray-800 flex items-center m-0 p-0">視覚障害 ＋ 難聴</h4>
+                        <i class="fas fa-chevron-down icon"></i>
+                    </div>
+                    <div class="accordion-content-inner">
+                        <div class="pt-4">
+                            <p><strong>困難さ：</strong> 周囲の状況を把握するための「目」と「耳」の両方からの情報が制限されます。例えば、交差点で車の音は聞こえにくく、信号の色は見えにくいという二重の困難に直面します。情報から遮断されやすく、孤立感や不安が強まる傾向があります。</p>
+                            <p><strong>支援のポイント：</strong> 支援者は、視覚情報と聴覚情報の両方を補う、唯一の情報源としての役割がより重要になります。コミュニケーションを取る際は、静かな場所に移動し、利用者の顔の正面からはっきりと話す、あるいは筆談やスマートフォンの文字入力アプリを使うなど、その方が最も理解しやすい方法を丁寧に確認する必要があります。</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="mt-4 space-y-4">
+                    <div class="accordion-toggle-inner w-full">
+                        <h4 class="text-lg font-bold text-gray-800 flex items-center m-0 p-0">視覚障害 ＋ 糖尿病性神経障害</h4>
+                        <i class="fas fa-chevron-down icon"></i>
+                    </div>
+                    <div class="accordion-content-inner">
+                         <div class="pt-4">
+                            <p><strong>困難さ：</strong> 糖尿病の合併症で足の裏の感覚が鈍くなっている場合があります。この場合、利用者は目で見て足元の段差を確認することも、足の裏の感覚で察知することも難しくなります。そのため、転倒のリスクが非常に高くなります。</p>
+                            <p><strong>支援のポイント：</strong> 支援者は、通常以上に路面の状況（小さな段差、傾斜、タイルの凹凸など）に注意を払い、それを事前に、より具体的に言葉で伝える必要があります。「少し道が傾いています」「ここからアスファルトが砂利道に変わります」といった、足元の感覚を補うような情報提供が極めて重要になります。</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="mt-4 space-y-4">
+                    <div class="accordion-toggle-inner w-full">
+                        <h4 class="text-lg font-bold text-gray-800 flex items-center m-0 p-0">視覚障害 ＋ 身体障害（車椅子利用など）</h4>
+                        <i class="fas fa-chevron-down icon"></i>
+                    </div>
+                    <div class="accordion-content-inner">
+                        <div class="pt-4">
+                            <p><strong>困難さ：</strong> 移動ルートが物理的に大きく制限されます。数センチの段差や狭い通路が、通行不能の壁となります。また、車椅子操作と周囲の状況把握を同時に行うことは、非常に大きな精神的負担（認知負荷）を伴います。</p>
+                            <p><strong>支援のポイント：</strong> 事前の計画段階で、エレベーターの有無、スロープの傾斜、多目的トイレの場所といったバリアフリー情報を徹底的に調査することが不可欠です。当日は、ただ前方の障害物を伝えるだけでなく、「次の角を90度、少しタイトに曲がります」「スロープの終わりで一度止まりましょう」のように、車椅子の操作を予測した具体的なナビゲーションが求められます。</p>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="highlight-h3 flex items-center"><i class="fas fa-table mr-3 text-accent-color"></i>疾患別・機能的影響と支援戦略の対応表</h3>
+                <div class="overflow-x-auto mt-4">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>疾患名</th>
+                                <th>典型的な見え方</th>
+                                <th>機能的な困難の例</th>
+                                <th>同行援護における支援戦略の例</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>緑内障</td>
+                                <td>求心性視野狭窄（トンネルビジョン）</td>
+                                <td>側方から来る人や物に気づかず衝突する。</td>
+                                <td>支援者は利用者のやや斜め前を歩き、側方の障害物を口頭で伝える。角を曲がる際は、より大きな弧を描いて誘導する。</td>
+                            </tr>
+                            <tr>
+                                <td>加齢黄斑変性</td>
+                                <td>中心暗点（中心部の見えない箇所）</td>
+                                <td>メニューや人の顔が直接見えない。</td>
+                                <td>メニューを利用者の視線の少し横に提示する。人物を特定する際は、顔ではなく服装や髪型、声で説明する。</td>
+                            </tr>
+                            <tr>
+                                <td>網膜色素変性症</td>
+                                <td>夜盲、周辺視野の進行性欠損</td>
+                                <td>薄暗い店内や夜道で段差が見えない。</td>
+                                <td>小型のペンライトで足元をさりげなく照らす。事前に段差の数や高さを具体的に伝える。夕方以降の外出は、より明るいルートを選択する。</td>
+                            </tr>
+                            <tr>
+                                <td>白皮症（アルビニズム）</td>
+                                <td>羞明（光への過敏さ）</td>
+                                <td>日光や窓からの光が眩しく、目が開けられない。</td>
+                                <td>日陰の多いルートを提案する。カフェなどでは窓を背にする席へ誘導する。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </section>
         
         <section id="session-3">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-palette text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第3回：情報提供の技術：高度な言語景観描写</h2>
              <p class="mb-4 mt-4"><strong>目的：</strong> 言語による情報提供のスキルを、単なる事実の伝達から、「言葉による風景画」を描く芸術の域へと高める。</p>
+             <div class="mt-6">
+                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
+                <audio controls class="w-full">
+                    <source src="https://files.catbox.moe/zmlrxx.m4a" type="audio/mp4">
+                    ご使用のブラウザは音声の再生に対応していません。
+                </audio>
+            </div>
+            <h3 class="text-xl font-bold flex items-center mt-6 text-var-primary-color"><i class="fas fa-palette mr-3 text-var-accent-color"></i>美術館の実践から学ぶ描写の基礎</h3>
+            <p>我々は、美術館の学芸員や解説者が美術作品を言語化するために洗練させてきた高度な技術を、日常の景観描写に応用します。</p>
         </section>
 
         <section id="session-4">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-map-signs text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第4回：複雑・予測不能な環境の航法術</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong> 基本的な誘導技術では対応困難な、非定型的で挑戦的な環境において、安全かつ効率的に利用者を支援するための高度な認知ツールと戦略的思考を習得する。</p>
+            <div class="mt-6">
+                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
+                <audio controls class="w-full">
+                    <source src="https://files.catbox.moe/56qdy9.m4a" type="audio/mp4">
+                    ご使用のブラウザは音声の再生に対応していません。
+                </audio>
+            </div>
+            <h3 class="text-xl font-bold flex items-center mt-6 text-var-primary-color"><i class="fas fa-map-signs mr-3 text-var-accent-color"></i>環境の分析と予測</h3>
+            <p>高度なナビゲーションは、まず環境を正確に分析することから始まります。</p>
         </section>
 
         <section id="session-5">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-lightbulb text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第5回：ケーススタディ・ワークショップ：失敗と複雑性からの学び</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong> 実際の困難事例や失敗談を体系的に分析することを通じて、専門職としての省察の文化を育み、非難から学びへと転換することで、継続的な質の向上を図る。</p>
+            <div class="mt-6">
+                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
+                <audio controls class="w-full">
+                    <source src="https://files.catbox.moe/lqa421.m4a" type="audio/mp4">
+                    ご使用のブラウザは音声の再生に対応していません。
+                </audio>
+            </div>
         </section>
 
         <section id="session-6">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-tasks text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第6回：複雑な生活行為の支援</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong> 単なる移動を超え、高度な専門性が求められる生活行為において、利用者を効果的に支援するための専門知識と技術を提供する。</p>
+            <div class="mt-6">
+                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
+                <audio controls class="w-full">
+                    <source src="https://files.catbox.moe/lylrml.m4a" type="audio/mp4">
+                    ご使用のブラウザは音声の再生に対応していません。
+                </audio>
+            </div>
         </section>
 
         <section id="session-7">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-hands-helping text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第7回：盲ろう（Deafblind）者支援入門</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong> 高度な実践者に対し、盲ろうコミュニティの特有なニーズに関する基礎的な認識を提供し、基本的なコミュニケーション方法を習得させる。</p>
+            <div class="mt-6">
+                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
+                <audio controls class="w-full">
+                    <source src="https://files.catbox.moe/blno67.m4a" type="audio/mp4">
+                    ご使用のブラウザは音声の再生に対応していません。
+                </audio>
+            </div>
         </section>
 
         <section id="session-8">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-shield-alt text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第8回：プロアクティブ・リスクマネジメントと体系的事故防止</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong>支援者の思考様式を、事故に事後対応する「リアクティブ」なものから、リスクを体系的かつ根拠に基づいて特定、分析、軽減する「プロアクティブ」なものへと転換させる。</p>
+            <div class="mt-6">
+                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
+                <audio controls class="w-full">
+                    <source src="https://files.catbox.moe/hwh4ad.m4a" type="audio/mp4">
+                    ご使用のブラウザは音声の再生に対応していません。
+                </audio>
+            </div>
         </section>
 
         <section id="session-9">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-glass-cheers text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第9回：文化的・余暇的参加の促進：統合的ケーススタディ</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong>参加者がこれまでに学んだ複数の高度なスキルを、管理的かつ現実的な文脈で統合的に検討するための、集大成となるケーススタディモジュールとして機能させる。</p>
+            <div class="mt-6">
+                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
+                <audio controls class="w-full">
+                    <source src="https://files.catbox.moe/nzkg0n.m4a" type="audio/mp4">
+                    ご使用のブラウザは音声の再生に対応していません。
+                </audio>
+            </div>
         </section>
 
          <section id="session-10">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-house-damage text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第10回：災害への備えと緊急時対応</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong>政府の公式ガイドラインに基づき、大規模災害の全てのフェーズにおいて、視覚障害のある利用者を効果的に支援するために不可欠な知識と意思決定スキルを、支援者に習得させる。</p>
+            <div class="mt-6">
+                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
+                <audio controls class="w-full">
+                    <source src="https://files.catbox.moe/pgy1a3.m4a" type="audio/mp4">
+                    ご使用のブラウザは音声の再生に対応していません。
+                </audio>
+            </div>
         </section>
 
         <section id="session-11">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-robot text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第11回：支援の未来：支援技術（アシスティブ・テクノロジー）の統合</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong> 支援者が、現在および将来登場する支援技術に関する実用的な知識を習得し、これらのツールを利用者の生活に統合するための役割を理解する。</p>
+            <div class="mt-6">
+                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
+                <audio controls class="w-full">
+                    <source src="https://files.catbox.moe/cemkz5.m4a" type="audio/mp4">
+                    ご使用のブラウザは音声の再生に対応していません。
+                </audio>
+            </div>
         </section>
 
         <section id="session-12">
             <div class="text-center mb-6 text-var-primary-color opacity-75"><i class="fas fa-seedling text-5xl"></i></div>
             <h2 class="text-2xl font-bold text-center">第12回：持続可能な専門職であるために：セルフケア、バーンアウト予防、およびピア・リーダーシップ</h2>
             <p class="mb-4 mt-4"><strong>目的：</strong> 専門職としてのウェルビーイングが中核的な能力であることを理解させ、セルフケア、バーンアウト予防、およびピア・サポートのシステムを構築するためのツールを提供する。</p>
+            <div class="mt-6">
+                <h4 class="font-bold text-lg text-var-primary-color mb-2">参考音声：</h4>
+                <audio controls class="w-full">
+                    <source src="https://files.catbox.moe/nvs9ql.m4a" type="audio/mp4">
+                    ご使用のブラウザは音声の再生に対応していません。
+                </audio>
+            </div>
         </section>
     </div>
 
@@ -458,7 +654,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = e.currentTarget.dataset.target;
             setActiveSession(targetId);
 
-            // ★修正点：スマホ表示でクリック時にコンテンツへスクロール
             if (window.innerWidth < 768) { 
                 const contentElement = document.getElementById('session-content');
                 if (contentElement) {
